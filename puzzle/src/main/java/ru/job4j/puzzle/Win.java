@@ -21,13 +21,8 @@ public class Win {
 
     public static boolean check(int[][] board) {
 
-        for (int row = 0; row < board.length; row++) {
-            if (checkHorizontal(board, row)) {
-                return  true;
-            }
-        }
-        for (int col = 0; col < board[0].length; col++) {
-            if (checkVertical(board, col)) {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 1 && (checkVertical(board, i) || checkHorizontal(board, i))) {
                 return  true;
             }
         }
